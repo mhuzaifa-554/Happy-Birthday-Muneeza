@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Muneeza 💖</title>
+<style>
+body {
+    background: radial-gradient(circle at top left, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+}
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+    text-align: center;
+    max-width: 650px;
+    position: relative;
+    border: 3px solid #ffb6c1;
+    box-shadow: 0 0 30px #ffb6c1;
+}
+h1 {
+    color: #e91e63;
+    margin-bottom: 15px;
+    font-size: 2em;
+    animation: heartbeat 2s infinite;
+}
+p {
+    font-size: 17px;
+    color: #444;
+    line-height: 1.7;
+    white-space: pre-line;
+    text-align: center;
+}
+.footer {
+    position: absolute;
+    bottom: -60px;
+    width: 100%;
+    text-align: center;
+    font-style: italic;
+    color: #e91e63;
+    font-size: 18px;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+.footer .heart {
+    display: inline-block;
+    color: red;
+    animation: heartbeat 1s infinite;
+}
+@keyframes heartbeat {
+    0%, 100% {transform: scale(1);}
+    50% {transform: scale(1.2);}
+}
+@keyframes glow {
+    from {text-shadow: 0 0 5px #ffb6c1, 0 0 10px #ffb6c1;}
+    to {text-shadow: 0 0 20px #ff69b4, 0 0 30px #ff69b4;}
+}
+@keyframes fadeIn {
+    0% {opacity: 0; transform: translateY(-30px);}
+    100% {opacity: 1; transform: translateY(0);}
+}
+.typed-text {
+    border-right: 2px solid #e91e63;
+    white-space: pre-wrap;
+    overflow: hidden;
+    animation: blink 0.7s step-end infinite;
+    display: inline-block;
+    text-align: left;
+}
+@keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: #e91e63; }
+}
+.sparkle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+.sparkle span {
+    position: absolute;
+    display: block;
+    width: 6px;
+    height: 6px;
+    background: rgba(255,192,203,0.9);
+    border-radius: 50%;
+    box-shadow: 0 0 10px pink;
+    animation: sparkleAnim 6s linear infinite;
+}
+@keyframes sparkleAnim {
+    0% {transform: translateY(0) scale(1); opacity: 1;}
+    100% {transform: translateY(-100vh) scale(0.5); opacity: 0;}
+}
+.petal {
+    position: fixed;
+    top: -10px;
+    background: pink;
+    border-radius: 50%;
+    opacity: 0.7;
+    pointer-events: none;
+    animation: fall 10s linear infinite;
+}
+@keyframes fall {
+    0% {transform: translateY(0) rotate(0deg);}
+    100% {transform: translateY(110vh) rotate(360deg);}
+}
+</style>
+</head>
+<body>
+<div class="sparkle"></div>
+<div class="card">
+    <h1>Happy Birthday <span style="color:#e91e63;">Muneeza 💖</span></h1>
+    <p class="typed-text" id="typed"></p>
+    <div class="footer">Made with love by Huzaifa <span class="heart">❤️</span></div>
+</div>
+<audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2023/03/23/audio_1b4409f16d.mp3?filename=romantic-piano-melody-14495.mp3" type="audio/mpeg">
+</audio>
+<script>
+const text = `Happy Birthday to the love of my life, my soulmate, and my best friend! 🎂❤️
+You are the reason my heart beats with so much joy, the reason behind my endless smiles 😊💫. With you, every single day feels like a fairytale ✨🌹.
+
+I’m the luckiest person in this world to walk this journey of life holding your hand 🤝💕. Thank you for showering me with your pure love, your care, and for being the most beautiful part of my world 🌍💖.
+
+On your special day, I just want you to know — I love you more than words can ever express 💌❤️. My heart belongs to you, today and always 💞💍.
+
+Can’t wait to celebrate you today, to create magical memories together 🥂🎉, and to keep writing our forever love story 📖💘.
+
+Happy Birthday, my one and only, my forever, my everything! 🥰❤️🌹`;
+let i = 0;
+function type() {
+    if (i < text.length) {
+        document.getElementById('typed').textContent += text.charAt(i);
+        i++;
+        setTimeout(type, 40);
+    }
+}
+window.onload = () => {
+    alert('Happy Birthday Muneeza 💖\nClick OK to open your surprise 🎂✨');
+    type();
+    createSparkles();
+    createPetals();
+};
+function createSparkles(){
+    const sparkleContainer = document.querySelector('.sparkle');
+    for(let i=0;i<25;i++){
+        const s = document.createElement('span');
+        s.style.left = Math.random()*100+'%';
+        s.style.top = Math.random()*100+'%';
+        s.style.animationDelay = Math.random()*5+'s';
+        s.style.animationDuration = (Math.random()*5+3)+'s';
+        sparkleContainer.appendChild(s);
+    }
+}
+function createPetals(){
+    for(let i=0;i<20;i++){
+        const petal = document.createElement('div');
+        petal.classList.add('petal');
+        petal.style.left = Math.random()*100+'vw';
+        petal.style.width = Math.random()*12+8+'px';
+        petal.style.height = petal.style.width;
+        petal.style.animationDuration = Math.random()*5+5+'s';
+        petal.style.animationDelay = Math.random()*5+'s';
+        document.body.appendChild(petal);
+    }
+}
+document.addEventListener('mousemove', function(e){
+    const trail = document.createElement('span');
+    trail.className = 'trail';
+    trail.style.position = 'fixed';
+    trail.style.left = e.pageX + 'px';
+    trail.style.top = e.pageY + 'px';
+    trail.style.width = '8px';
+    trail.style.height = '8px';
+    trail.style.borderRadius = '50%';
+    trail.style.background = 'rgba(255,182,193,0.8)';
+    trail.style.boxShadow = '0 0 10px pink';
+    document.body.appendChild(trail);
+    setTimeout(() => {trail.remove();}, 2000);
+});
+</script>
+</body>
+</html>
